@@ -1,0 +1,58 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="TemplateProject"
+run/main_scene="res://test_effects.tscn"
+config/features=PackedStringArray("4.2", "GL Compatibility")
+config/icon="res://icon.svg"
+
+[autoload]
+
+Debug="*res://toolkit/singletons/Debug.tscn"
+Globals="*res://toolkit/singletons/Globals.gd"
+SaverLoader="*res://toolkit/singletons/SaverLoader.gd"
+GSM="*res://toolkit/singletons/GameStateManager.gd"
+SceneChanger="*res://toolkit/singletons/SceneChanger.gd"
+SceneStack="*res://toolkit/singletons/SceneStack.tscn"
+Transition="*res://toolkit/singletons/Transition.tscn"
+Music="*res://toolkit/singletons/Music.tscn"
+Events="*res://toolkit/singletons/Events.gd"
+SpecialEffects="*res://toolkit/singletons/SpecialEffects.gd"
+
+[debug]
+
+gdscript/warnings/onready_with_export=1
+
+[display]
+
+window/size/viewport_width=320
+window/size/viewport_height=180
+window/size/window_width_override=1280
+window/size/window_height_override=720
+window/stretch/mode="viewport"
+
+[input]
+
+toggle_debug={
+"deadzone": 0.5,
+"events": []
+}
+ui_exit={
+"deadzone": 0.5,
+"events": []
+}
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
