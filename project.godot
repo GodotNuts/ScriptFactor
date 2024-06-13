@@ -10,8 +10,8 @@ config_version=5
 
 [application]
 
-config/name="TemplateProject"
-run/main_scene="res://test_effects.tscn"
+config/name="ScriptFactorDemo"
+run/main_scene="res://scenes/maps/map_base.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
 

@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dggdvj5k8bdyw"]
+
+[node name="Map" type="Node2D"]
+
+[node name="GroundLayer" type="TileMapLayer" parent="."]
+
+[node name="EnemyStartingPositions" type="TileMapLayer" parent="."]
+
+[node name="PlayerStartingPositions" type="TileMapLayer" parent="."]
