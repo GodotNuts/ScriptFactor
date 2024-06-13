@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://bqwod170ut1wj"]
+
+[ext_resource type="Script" path="res://addons/script_factor/editors/item_name_interface.gd" id="1_e771d"]
+[ext_resource type="Theme" uid="uid://dtiiqjmhff7ou" path="res://addons/script_factor/script_factor_line_edit_theme.tres" id="2_kf85q"]
+
+[node name="item_name_interface" type="Popup"]
+transparent_bg = true
+size = Vector2i(200, 28)
+visible = true
+max_size = Vector2i(500, 28)
+script = ExtResource("1_e771d")
+
+[node name="LineEdit" type="LineEdit" parent="."]
+custom_minimum_size = Vector2(200, 28)
+offset_right = 200.0
+offset_bottom = 28.0
+theme = ExtResource("2_kf85q")
+theme_override_constants/caret_width = 1
+placeholder_text = "New name"
+alignment = 1
+expand_to_text_length = true
+context_menu_enabled = false
