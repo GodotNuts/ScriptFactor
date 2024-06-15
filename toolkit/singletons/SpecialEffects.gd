@@ -49,4 +49,14 @@ static func add_temporary_parallel_multi_effect_to(effect_scenes : Array[PackedS
 	node.add_child(detachable)
 	detachable.TimeToComplete = in_time
 	parallel_effect.start_effect(node)
-	
+
+static func shake(canvas_item : CanvasItem, amount : float) -> void:
+	var shake_effect = preload("res://toolkit/nodes/effects/shake.tscn").instantiate()
+	shake_effect.trauma = amount / 5.0
+	SpecialEffects.add_waitable_effect(shake_effect, canvas_item)
+
+static func add_waitable_effect(effect : Effect, canvas_item : CanvasItem) -> void:
+	var awaitable = FreeAwaitable.new(effect, effect.effect_completed)
+	assert(effect is Effect, "Effect_scene did not produce an effect type")
+	canvas_item.add_child(effect)
+	effect.start_effect(canvas_item)
