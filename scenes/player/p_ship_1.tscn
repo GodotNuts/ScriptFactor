@@ -87,3 +87,9 @@ shader_parameter/number_of_images = Vector2(1, 1)
 material = SubResource("ShaderMaterial_7yjbt")
 scale = Vector2(1, 1)
 texture = ExtResource("2_t5ohx")
+
+[node name="Area2D" parent="." index="2"]
+position = Vector2(8, 8)
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2(0, 0)

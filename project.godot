@@ -40,6 +40,15 @@ window/size/window_width_override=1280
 window/size/window_height_override=720
 window/stretch/mode="canvas_items"
 
+[file_customization]
+
+folder_colors={
+"res://addons/": "blue",
+"res://assets/": "green",
+"res://scenes/": "red",
+"res://toolkit/": "gray"
+}
+
 [input]
 
 toggle_debug={

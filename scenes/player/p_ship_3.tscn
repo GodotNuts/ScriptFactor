@@ -85,4 +85,5 @@ shader_parameter/number_of_images = Vector2(1, 1)
 
 [node name="Sprite2D" parent="." index="0"]
 material = SubResource("ShaderMaterial_wm1bk")
+position = Vector2(-2, -2)
 texture = ExtResource("2_k7dwu")

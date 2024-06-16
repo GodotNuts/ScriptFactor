@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dlmjlcfj5xs43"]
+
+[ext_resource type="Script" path="res://scenes/spawners/spawner.gd" id="1_40xsa"]
+
+[node name="PlayerSpawner" type="Marker2D"]
+script = ExtResource("1_40xsa")
+Spawnables = Array[String](["res://scenes/player/p_ship_1.tscn", "res://scenes/player/p_ship_2.tscn", "res://scenes/player/p_ship_3.tscn", "res://scenes/player/p_ship_4.tscn", "res://scenes/player/p_ship_5.tscn"])

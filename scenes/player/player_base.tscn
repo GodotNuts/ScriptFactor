@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://d3q3hea01sei3"]
+[gd_scene load_steps=8 format=3 uid="uid://d3q3hea01sei3"]
 
 [ext_resource type="Script" path="res://scenes/player/player_base.gd" id="1_mbjny"]
+[ext_resource type="PackedScene" uid="uid://cm0daiy28i04h" path="res://toolkit/nodes/drag_drop/drag_control.tscn" id="2_3u8i6"]
 
 [sub_resource type="Shader" id="Shader_dmlkh"]
 resource_local_to_scene = true
@@ -110,7 +111,9 @@ script = ExtResource("1_mbjny")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_hwdow")
+position = Vector2(-1, -1)
 scale = Vector2(1.13389, 1.13389)
+centered = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -122,4 +125,10 @@ autoplay = "Float"
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(8, 8)
 shape = SubResource("RectangleShape2D_pklha")
+
+[node name="DragControl" parent="." instance=ExtResource("2_3u8i6")]
+offset_right = 16.0
+offset_bottom = 16.0
+script = null

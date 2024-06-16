@@ -1,9 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://b8af3p8r7nsbc"]
+[gd_scene load_steps=5 format=3 uid="uid://cdshm4cwvpnjv"]
 
-[ext_resource type="PackedScene" uid="uid://d3q3hea01sei3" path="res://scenes/player/player_base.tscn" id="1_2855w"]
-[ext_resource type="Texture2D" uid="uid://bf67h0q0qcdqc" path="res://assets/ship_4.png" id="2_nk34t"]
+[ext_resource type="PackedScene" uid="uid://da2umtkaotll" path="res://scenes/enemy/enemy_base.tscn" id="1_1rinm"]
+[ext_resource type="Texture2D" uid="uid://c34t3mbhmhbv2" path="res://assets/ship_1.png" id="2_5mj56"]
 
-[sub_resource type="Shader" id="Shader_kjsnk"]
+[sub_resource type="Shader" id="Shader_3pens"]
 resource_local_to_scene = true
 code = "shader_type canvas_item;
 
@@ -71,19 +71,18 @@ void fragment() {
 	}
 }"
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_klax2"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5jql4"]
 resource_local_to_scene = true
-shader = SubResource("Shader_kjsnk")
-shader_parameter/color = Color(0.0275001, 0, 0.55, 1)
+shader = SubResource("Shader_3pens")
+shader_parameter/color = Color(0.55, 0, 0.00916653, 1)
 shader_parameter/width = 2.0
 shader_parameter/pattern = 0
 shader_parameter/inside = false
 shader_parameter/add_margins = true
 shader_parameter/number_of_images = Vector2(1, 1)
 
-[node name="PShip4" instance=ExtResource("1_2855w")]
+[node name="EShip1" instance=ExtResource("1_1rinm")]
 
 [node name="Sprite2D" parent="." index="0"]
-material = SubResource("ShaderMaterial_klax2")
-position = Vector2(-2, -2)
-texture = ExtResource("2_nk34t")
+material = SubResource("ShaderMaterial_5jql4")
+texture = ExtResource("2_5mj56")
