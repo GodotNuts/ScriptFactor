@@ -82,6 +82,7 @@ shader_parameter/add_margins = true
 shader_parameter/number_of_images = Vector2(1, 1)
 
 [node name="PShip4" instance=ExtResource("1_2855w")]
+Movement = 2
 
 [node name="Sprite2D" parent="." index="0"]
 material = SubResource("ShaderMaterial_klax2")

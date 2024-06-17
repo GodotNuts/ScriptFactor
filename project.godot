@@ -40,6 +40,10 @@ window/size/window_width_override=1280
 window/size/window_height_override=720
 window/stretch/mode="canvas_items"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/script_factor/plugin.cfg")
+
 [file_customization]
 
 folder_colors={
@@ -48,6 +52,10 @@ folder_colors={
 "res://scenes/": "red",
 "res://toolkit/": "gray"
 }
+
+[global_group]
+
+Navigation=""
 
 [input]
 

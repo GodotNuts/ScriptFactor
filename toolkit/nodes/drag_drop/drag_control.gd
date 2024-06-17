@@ -7,7 +7,7 @@ signal drag_canceled()
 
 @export var texture : Texture2D
 
-const DragPreviewScene = preload("res://utilities/drag_drop/drag_preview.tscn")
+const DragPreviewScene = preload("res://toolkit/nodes/drag_drop/drag_preview.tscn")
 
 var current_data : Dictionary
 

@@ -4,8 +4,9 @@
 
 [node name="DragControl" type="Control"]
 auto_translate_mode = 1
+custom_minimum_size = Vector2(16, 16)
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 16.0
+offset_bottom = 16.0
 script = ExtResource("1_6gy46")

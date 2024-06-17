@@ -1,3 +1,4 @@
+class_name DropArea
 extends Control
 
 signal drop_requested(request : DropRequest)

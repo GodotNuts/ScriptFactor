@@ -3,7 +3,10 @@ extends Node
 # For custom global data
 # add_if_unsupported will add a specific key to your global data if the key you pass in wasn't found
 
-var GlobalData = { "can_double_jump" : false }
+var GlobalData = { }
+
+func _ready() -> void:
+	randomize()
 
 func supports(key):
 	if GlobalData.has(key):
@@ -20,4 +23,3 @@ func add_if_unsupported(key, default_value : bool = false):
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("ui_exit"):
 		SceneChanger.close_scene()
-

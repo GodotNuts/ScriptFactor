@@ -4,4 +4,5 @@
 
 [node name="PlayerSpawner" type="Marker2D"]
 script = ExtResource("1_40xsa")
+FacingDirection = Vector2i(0, 1)
 Spawnables = Array[String](["res://scenes/player/p_ship_1.tscn", "res://scenes/player/p_ship_2.tscn", "res://scenes/player/p_ship_3.tscn", "res://scenes/player/p_ship_4.tscn", "res://scenes/player/p_ship_5.tscn"])

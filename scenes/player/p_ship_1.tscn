@@ -82,14 +82,11 @@ shader_parameter/add_margins = true
 shader_parameter/number_of_images = Vector2(1, 1)
 
 [node name="PShip1" instance=ExtResource("1_oeaoj")]
+Movement = 3
 
 [node name="Sprite2D" parent="." index="0"]
 material = SubResource("ShaderMaterial_7yjbt")
-scale = Vector2(1, 1)
 texture = ExtResource("2_t5ohx")
 
 [node name="Area2D" parent="." index="2"]
 position = Vector2(8, 8)
-
-[node name="CollisionShape2D" parent="Area2D" index="0"]
-position = Vector2(0, 0)
