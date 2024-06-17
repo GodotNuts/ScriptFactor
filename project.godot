@@ -42,7 +42,7 @@ window/stretch/mode="canvas_items"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/script_factor/plugin.cfg")
+enabled=PackedStringArray("res://addons/replacement_drag/plugin.cfg", "res://addons/script_factor/plugin.cfg")
 
 [file_customization]
 

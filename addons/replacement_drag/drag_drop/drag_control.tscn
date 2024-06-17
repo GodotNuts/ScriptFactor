@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cm0daiy28i04h"]
 
-[ext_resource type="Script" path="res://toolkit/nodes/drag_drop/drag_control.gd" id="1_6gy46"]
+[ext_resource type="Script" path="res://addons/replacement_drag/drag_drop/drag_control.gd" id="1_6gy46"]
 
 [node name="DragControl" type="Control"]
 auto_translate_mode = 1

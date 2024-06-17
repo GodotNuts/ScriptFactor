@@ -59,7 +59,6 @@ sources/0 = SubResource("TileSetScenesCollectionSource_7jqpy")
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_f4s2w"]
 scenes/2/scene = ExtResource("6_jhnjv")
-scenes/2/display_placeholder = ExtResource("6_jhnjv")
 
 [sub_resource type="TileSet" id="TileSet_c1opl"]
 sources/0 = SubResource("TileSetScenesCollectionSource_f4s2w")
@@ -73,6 +72,7 @@ collision_enabled = false
 script = ExtResource("3_vi3k1")
 
 [node name="DecorationLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAADAAYAAAAAAAAAAAANAAMAAAAAAAAAAAASAAYAAAAAAAAAAAAGAAQAAAAAAAAAAAA=")
 tile_set = SubResource("TileSet_5xl1s")
 navigation_enabled = false
 

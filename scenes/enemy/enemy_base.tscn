@@ -1,4 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://da2umtkaotll"]
+[gd_scene load_steps=8 format=3 uid="uid://da2umtkaotll"]
+
+[ext_resource type="Script" path="res://scenes/enemy/enemy_base.gd" id="1_uo08x"]
 
 [sub_resource type="Shader" id="Shader_dmlkh"]
 resource_local_to_scene = true
@@ -120,6 +122,7 @@ _data = {
 size = Vector2(16, 16)
 
 [node name="Enemy" type="Node2D"]
+script = ExtResource("1_uo08x")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_64yvl")
@@ -136,3 +139,5 @@ collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_p3rxt")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

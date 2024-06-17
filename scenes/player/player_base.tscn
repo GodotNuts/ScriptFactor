@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://d3q3hea01sei3"]
 
 [ext_resource type="Script" path="res://scenes/player/player_base.gd" id="1_mbjny"]
-[ext_resource type="PackedScene" uid="uid://cm0daiy28i04h" path="res://toolkit/nodes/drag_drop/drag_control.tscn" id="2_3u8i6"]
+[ext_resource type="Script" path="res://addons/replacement_drag/drag_drop/drag_control.gd" id="2_cfloq"]
 
 [sub_resource type="Shader" id="Shader_dmlkh"]
 resource_local_to_scene = true
@@ -125,12 +125,18 @@ collision_mask = 0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_pklha")
 
-[node name="DragControl" parent="." instance=ExtResource("2_3u8i6")]
+[node name="MoveTimeout" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[node name="DragControl" type="Control" parent="."]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 3
+anchors_preset = 0
 offset_left = -8.0
 offset_top = -8.0
 offset_right = 8.0
 offset_bottom = 8.0
+script = ExtResource("2_cfloq")
 
-[connection signal="drag_canceled" from="DragControl" to="." method="_on_drag_control_drag_canceled"]
-[connection signal="drag_started" from="DragControl" to="." method="_on_drag_control_drag_started"]
-[connection signal="needs_data" from="DragControl" to="." method="_on_drag_control_needs_data"]
+[connection signal="timeout" from="MoveTimeout" to="." method="_on_move_timeout_timeout"]

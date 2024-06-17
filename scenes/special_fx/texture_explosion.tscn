@@ -1,0 +1,11 @@
+[gd_scene load_steps=4 format=3 uid="uid://bnytp2qblr35"]
+
+[ext_resource type="PackedScene" uid="uid://gxq6xo6ti177" path="res://toolkit/nodes/effect.tscn" id="1_0eg6y"]
+[ext_resource type="Script" path="res://scenes/special_fx/texture_explosion.gd" id="2_x7q83"]
+[ext_resource type="PackedScene" uid="uid://b2g7alfu6byec" path="res://scenes/special_fx/explosion_scene.tscn" id="3_hyjru"]
+
+[node name="TextureExplosion" instance=ExtResource("1_0eg6y")]
+script = ExtResource("2_x7q83")
+
+[node name="ExplosionScene" parent="." index="0" instance=ExtResource("3_hyjru")]
+autoplay = ""

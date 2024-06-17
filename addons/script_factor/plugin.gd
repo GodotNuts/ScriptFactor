@@ -22,8 +22,7 @@ func _enter_tree() -> void:
 	script_editor.editor_script_changed.connect(_on_editor_changed)
 
 	previous_editor = script_editor.get_current_editor()
-	if previous_editor != null and not previous_editor.get_base_editor().gui_input.is_connected(_on_event):
-		previous_editor.get_base_editor().gui_input.connect(_on_event)
+	_connect_gui_input()
 
 	_add_editor("ScriptFactorRename", DEFAULT_EXTRACTOR, Validators.NameValidator.new(), Replacers.RenameReplacer.new(), "Rename variable", KEY_1)
 	_add_editor("ScriptFactorVariable", DEFAULT_EXTRACTOR, Validators.NameValidator.new(), Replacers.VariableReplacer.new(), "To variable", KEY_2)
@@ -56,8 +55,7 @@ func _on_editor_changed(script : Script) -> void:
 		previous_editor.get_base_editor().gui_input.disconnect(_on_event)
 
 	previous_editor = new_editor
-	if not previous_editor.get_base_editor().gui_input.is_connected(_on_event):
-		previous_editor.get_base_editor().gui_input.connect(_on_event)
+	_connect_gui_input()
 
 func _on_event(ev : InputEvent) -> void:
 	if Engine.is_editor_hint():
@@ -66,3 +64,7 @@ func _on_event(ev : InputEvent) -> void:
 			if input.alt_pressed and input.keycode == KEY_QUOTELEFT:
 				var mouse_pos = Vector2(0, 0)
 				show_at.emit(mouse_pos)
+
+func _connect_gui_input():
+	if previous_editor != null and not previous_editor.get_base_editor().gui_input.is_connected(_on_event):
+		previous_editor.get_base_editor().gui_input.connect(_on_event)

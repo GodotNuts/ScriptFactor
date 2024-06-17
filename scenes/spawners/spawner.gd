@@ -6,11 +6,11 @@ extends Marker2D
 const ChanceToSpawn = .5
 
 func _process(delta: float) -> void:
-	_place_random_spawn()
+	_place_spawn()
 	set_process(false)
 	queue_free()
-	
-func _place_random_spawn() -> void:
+
+func _place_spawn():
 	if randf() > ChanceToSpawn:
 		var random_spawn = Spawnables.pick_random()
 		var spawn = load(random_spawn).instantiate()
