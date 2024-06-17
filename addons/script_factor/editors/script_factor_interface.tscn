@@ -3213,10 +3213,11 @@ Button/styles/pressed = SubResource("StyleBoxFlat_jy671")
 
 [node name="ScriptFactorPopup" type="PopupMenu"]
 title = "Factorize"
-size = Vector2i(219, 146)
+initial_position = 4
+size = Vector2i(219, 130)
 visible = true
 unfocusable = true
-max_size = Vector2i(219, 146)
+max_size = Vector2i(219, 130)
 theme = SubResource("Theme_62tgr")
 allow_search = false
 script = ExtResource("1_tgyss")

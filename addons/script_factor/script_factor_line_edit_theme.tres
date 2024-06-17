@@ -1930,7 +1930,7 @@ cache/0/12/0/kerning_overrides/14/0 = Vector2(0, 0)
 cache/0/12/0/kerning_overrides/13/0 = Vector2(0, 0)
 cache/0/12/0/kerning_overrides/12/0 = Vector2(0, 0)
 
-[sub_resource type="Image" id="Image_r5k5m"]
+[sub_resource type="Image" id="Image_jyqr3"]
 data = {
 "data": PackedByteArray("////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////YP///2H///8A////AP///wD///8A////AP///wD///8A////AP///2D///9h////AP///wD///8A////YP///7////+/////Yf///wD///8A////AP///wD///8A////AP///2D///+/////v////2H///8A////AP///2H///+/////v////7////9h////AP///wD///8A////AP///2D///+/////v////7////9g////AP///wD///8A////Yf///7////+/////v////2H///8A////AP///2D///+/////v////7////9g////AP///wD///8A////AP///wD///9h////v////7////+/////Yf///2D///+/////v////7////9g////AP///wD///8A////AP///wD///8A////AP///2H///+/////v////7////+/////v////7////9g////AP///wD///8A////AP///wD///8A////AP///wD///8A////Yf///7////+/////v////7////9g////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///2D///+/////v////7////+/////Yf///wD///8A////AP///wD///8A////AP///wD///8A////AP///2D///+/////v////7////+/////v////7////9h////AP///wD///8A////AP///wD///8A////AP///2D///+/////v////7////9g////Yf///7////+/////v////2H///8A////AP///wD///8A////AP///2D///+/////v////7////9g////AP///wD///9h////v////7////+/////Yf///wD///8A////AP///2D///+/////v////7////9g////AP///wD///8A////AP///2H///+/////v////7////9h////AP///wD///9h////v////7////9g////AP///wD///8A////AP///wD///8A////Yf///7////+/////YP///wD///8A////AP///2H///9g////AP///wD///8A////AP///wD///8A////AP///wD///9h////YP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AA=="),
 "format": "RGBA8",
@@ -1940,7 +1940,7 @@ data = {
 }
 
 [sub_resource type="ImageTexture" id="ImageTexture_0mfia"]
-image = SubResource("Image_r5k5m")
+image = SubResource("Image_jyqr3")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uk5er"]
 content_margin_left = 4.0

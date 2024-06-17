@@ -28,9 +28,9 @@ func _enter_tree() -> void:
 	_add_editor("ScriptFactorRename", DEFAULT_EXTRACTOR, Validators.NameValidator.new(), Replacers.RenameReplacer.new(), "Rename variable", KEY_1)
 	_add_editor("ScriptFactorVariable", DEFAULT_EXTRACTOR, Validators.NameValidator.new(), Replacers.VariableReplacer.new(), "To variable", KEY_2)
 	#_add_editor("ScriptFactorParameter", DEFAULT_EXTRACTOR, Validators.NameValidator.new(), Replacers.ParameterReplacer.new(), "To parameter", KEY_3)
-	_add_editor("ScriptFactorConstVariable", DEFAULT_EXTRACTOR, Validators.NameValidator.new(), Replacers.ConstReplacer.new(), "To const", KEY_4)
-	_add_editor("ScriptFactorFunction", DEFAULT_EXTRACTOR, Validators.NameValidator.new(), Replacers.FunctionReplacer.new(), "To function", KEY_5)
-	_add_editor("ScriptFactorRegionize", DEFAULT_EXTRACTOR, Validators.NoValidator.new(), Replacers.RegionReplacer.new(), "Add region", KEY_6, true)
+	_add_editor("ScriptFactorConstVariable", DEFAULT_EXTRACTOR, Validators.NameValidator.new(), Replacers.ConstReplacer.new(), "To const", KEY_3)
+	_add_editor("ScriptFactorFunction", DEFAULT_EXTRACTOR, Validators.NameValidator.new(), Replacers.FunctionReplacer.new(), "To function", KEY_4)
+	#_add_editor("ScriptFactorRegionize", DEFAULT_EXTRACTOR, Validators.NoValidator.new(), Replacers.RegionReplacer.new(), "Add region", KEY_6, true)
 
 	script_factor_plugin.set_plugin(self)
 
@@ -60,8 +60,9 @@ func _on_editor_changed(script : Script) -> void:
 		previous_editor.get_base_editor().gui_input.connect(_on_event)
 
 func _on_event(ev : InputEvent) -> void:
-	if ev is InputEventKey:
-		var input = ev as InputEventKey
-		if input.alt_pressed and input.keycode == KEY_QUOTELEFT:
-			var mouse_pos = get_viewport().get_mouse_position()
-			show_at.emit(mouse_pos)
+	if Engine.is_editor_hint():
+		if ev is InputEventKey:
+			var input = ev as InputEventKey
+			if input.alt_pressed and input.keycode == KEY_QUOTELEFT:
+				var mouse_pos = Vector2(0, 0)
+				show_at.emit(mouse_pos)
