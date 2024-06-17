@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://de2a6xu0jt76y"]
+
+[ext_resource type="Script" path="res://toolkit/nodes/drag_drop/drag_preview.gd" id="1_k02tc"]
+
+[node name="DragPreview" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_k02tc")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+unique_name_in_owner = true
+stretch_mode = 3

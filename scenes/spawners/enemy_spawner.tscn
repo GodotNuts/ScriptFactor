@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cfaxbaswxxcfk"]
+
+[ext_resource type="Script" path="res://scenes/spawners/spawner.gd" id="1_dljav"]
+
+[node name="EnemySpawner" type="Marker2D"]
+script = ExtResource("1_dljav")
+FacingDirection = Vector2i(0, -1)
+Spawnables = Array[String](["res://scenes/enemy/e_ship_1.tscn", "res://scenes/enemy/e_ship_2.tscn", "res://scenes/enemy/e_ship_3.tscn", "res://scenes/enemy/e_ship_4.tscn", "res://scenes/enemy/e_ship_5.tscn"])

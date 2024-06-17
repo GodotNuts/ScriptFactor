@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://b5ilhgxgc40d8"]
+
+[ext_resource type="Script" path="res://scenes/maps/ship_drop_zone.gd" id="1_51aet"]
+[ext_resource type="PackedScene" uid="uid://ddicp1t1san7c" path="res://toolkit/nodes/drag_drop/drop_area.tscn" id="1_vf81p"]
+
+[node name="ShipDropZone" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+mouse_filter = 1
+script = ExtResource("1_51aet")
+
+[node name="DropArea" parent="." instance=ExtResource("1_vf81p")]
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 8.0
+offset_bottom = 8.0

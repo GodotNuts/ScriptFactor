@@ -1,9 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://d3q3hea01sei3"]
+[gd_scene load_steps=5 format=3 uid="uid://c82wrqaeh5l4i"]
 
-[ext_resource type="Script" path="res://scenes/player/player_base.gd" id="1_mbjny"]
-[ext_resource type="PackedScene" uid="uid://cm0daiy28i04h" path="res://toolkit/nodes/drag_drop/drag_control.tscn" id="2_3u8i6"]
+[ext_resource type="PackedScene" uid="uid://da2umtkaotll" path="res://scenes/enemy/enemy_base.tscn" id="1_1tf8n"]
+[ext_resource type="Texture2D" uid="uid://p0d0nxhswr6h" path="res://assets/ship_2.png" id="2_0mpky"]
 
-[sub_resource type="Shader" id="Shader_dmlkh"]
+[sub_resource type="Shader" id="Shader_ugmcb"]
 resource_local_to_scene = true
 code = "shader_type canvas_item;
 
@@ -71,66 +71,18 @@ void fragment() {
 	}
 }"
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_hwdow"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ajvd3"]
 resource_local_to_scene = true
-shader = SubResource("Shader_dmlkh")
-shader_parameter/color = Color(0.0275001, 0, 0.55, 1)
+shader = SubResource("Shader_ugmcb")
+shader_parameter/color = Color(0.55, 0, 0.00916653, 1)
 shader_parameter/width = 2.0
 shader_parameter/pattern = 0
 shader_parameter/inside = false
 shader_parameter/add_margins = true
 shader_parameter/number_of_images = Vector2(1, 1)
 
-[sub_resource type="Animation" id="Animation_blt0d"]
-resource_name = "Float"
-length = 2.0
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(1, 1), Vector2(1.15, 1.15)]
-}
+[node name="EShip2" instance=ExtResource("1_1tf8n")]
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_gnmtu"]
-_data = {
-"Float": SubResource("Animation_blt0d")
-}
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_pklha"]
-size = Vector2(16, 16)
-
-[node name="Player" type="Node2D"]
-script = ExtResource("1_mbjny")
-Movement = 4
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-material = SubResource("ShaderMaterial_hwdow")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_gnmtu")
-}
-autoplay = "Float"
-
-[node name="Area2D" type="Area2D" parent="."]
-collision_mask = 0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("RectangleShape2D_pklha")
-
-[node name="DragControl" parent="." instance=ExtResource("2_3u8i6")]
-offset_left = -8.0
-offset_top = -8.0
-offset_right = 8.0
-offset_bottom = 8.0
-
-[connection signal="drag_canceled" from="DragControl" to="." method="_on_drag_control_drag_canceled"]
-[connection signal="drag_started" from="DragControl" to="." method="_on_drag_control_drag_started"]
-[connection signal="needs_data" from="DragControl" to="." method="_on_drag_control_needs_data"]
+[node name="Sprite2D" parent="." index="0"]
+material = SubResource("ShaderMaterial_ajvd3")
+texture = ExtResource("2_0mpky")

@@ -38,7 +38,24 @@ window/size/viewport_width=320
 window/size/viewport_height=180
 window/size/window_width_override=1280
 window/size/window_height_override=720
-window/stretch/mode="viewport"
+window/stretch/mode="canvas_items"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/script_factor/plugin.cfg")
+
+[file_customization]
+
+folder_colors={
+"res://addons/": "blue",
+"res://assets/": "green",
+"res://scenes/": "red",
+"res://toolkit/": "gray"
+}
+
+[global_group]
+
+Navigation=""
 
 [input]
 
@@ -50,6 +67,11 @@ ui_exit={
 "deadzone": 0.5,
 "events": []
 }
+
+[layer_names]
+
+2d_physics/layer_1="Player"
+2d_physics/layer_2="Enemy"
 
 [rendering]
 

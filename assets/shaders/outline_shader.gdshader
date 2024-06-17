@@ -1,8 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://da2umtkaotll"]
+shader_type canvas_item;
 
-[sub_resource type="Shader" id="Shader_dmlkh"]
-resource_local_to_scene = true
-code = "shader_type canvas_item;
+// From https://godotshaders.com/shader/2d-outline-inline-configured-for-sprite-sheets/
 
 uniform vec4 color : source_color = vec4(1.0);
 uniform float width : hint_range(0, 10) = 1.0;
@@ -66,73 +64,4 @@ void fragment() {
 		COLOR.rgb = inside ? mix(COLOR.rgb, color.rgb, color.a) : color.rgb;
 		COLOR.a += (1.0 - COLOR.a) * color.a;
 	}
-}"
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_64yvl"]
-resource_local_to_scene = true
-shader = SubResource("Shader_dmlkh")
-shader_parameter/color = Color(0.55, 0, 0.00916653, 1)
-shader_parameter/width = 2.0
-shader_parameter/pattern = 0
-shader_parameter/inside = false
-shader_parameter/add_margins = true
-shader_parameter/number_of_images = Vector2(1, 1)
-
-[sub_resource type="Animation" id="Animation_aegol"]
-resource_name = "Float"
-length = 2.0
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(1, 1), Vector2(1.15, 1.15)]
 }
-
-[sub_resource type="Animation" id="Animation_xp0ve"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1, 1)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_6dhbx"]
-_data = {
-"Float": SubResource("Animation_aegol"),
-"RESET": SubResource("Animation_xp0ve")
-}
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_p3rxt"]
-size = Vector2(16, 16)
-
-[node name="Enemy" type="Node2D"]
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-material = SubResource("ShaderMaterial_64yvl")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_6dhbx")
-}
-autoplay = "Float"
-
-[node name="Area2D" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("RectangleShape2D_p3rxt")
